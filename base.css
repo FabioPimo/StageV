@@ -75,6 +75,27 @@
     user-select: none;
 }
 
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--color-surface-850);
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 8px;
+  border: 2px solid var(--color-surface-850);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-bright);
+}
+
+
 html,
 body {
     height: 100%;
