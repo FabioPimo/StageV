@@ -5,19 +5,19 @@
     /* Semantische Farben – fein abgestuft fürs Dark-Theme */
     --danger-1: #b93a3a;
     --danger-2: #852727;
-    --danger-border: #ff6b6b;
+    --danger: #b93a3a;
     --danger-glow: rgba(255, 0, 0, .22);
     --success-1: #2f8a3b;
     --success-2: #1f5e29;
-    --success-border: #44cc66;
+    --success: #2f8a3b;
     --success-glow: rgba(0, 255, 128, .22);
     --warning-1: #b9892f;
     --warning-2: #7a5c1f;
-    --warning-border: #ffcc66;
+    --warning: #b9892f;
     --warning-glow: rgba(255, 184, 50, .22);
     --info-1: #3b6fb9;
     --info-2: #294c7a;
-    --info-border: #66a3ff;
+    --info: #3b6fb9;
     --info-glow: rgba(64, 140, 255, .22);
 
     /* Backgrounds & Surfaces */
@@ -76,23 +76,23 @@
 }
 
 *::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+    width: 10px;
+    height: 10px;
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--color-surface-850);
-  border-radius: 8px;
+    background: var(--color-surface-850);
+    border-radius: 8px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: var(--color-accent);
-  border-radius: 8px;
-  border: 2px solid var(--color-surface-850);
+    background: var(--color-accent);
+    border-radius: 8px;
+    border: 2px solid var(--color-surface-850);
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent-bright);
+    background: var(--color-accent-bright);
 }
 
 
@@ -153,7 +153,7 @@ body {
 .badge.success {
     background: linear-gradient(145deg, var(--success-1, #2f8a3b), var(--success-2, #1f5e29));
     color: #fff;
-    border-color: var(--success-border, #44cc66);
+    border-color: var(--success, #44cc66);
     box-shadow: 0 2px 6px var(--success-glow, rgba(0, 255, 128, .22)),
         inset 0 1px 1px rgba(255, 255, 255, .1);
 }
@@ -162,7 +162,7 @@ body {
 .badge.danger {
     background: linear-gradient(145deg, var(--danger-1, #b93a3a), var(--danger-2, #852727));
     color: #fff;
-    border-color: var(--danger-border, #ff6b6b);
+    border-color: var(--danger, #ff6b6b);
     box-shadow: 0 2px 6px var(--danger-glow, rgba(255, 0, 0, .22)),
         inset 0 1px 1px rgba(255, 255, 255, .1);
 }
@@ -171,7 +171,7 @@ body {
 .badge.warning {
     background: linear-gradient(145deg, var(--warning-1, #b9892f), var(--warning-2, #7a5c1f));
     color: #fff;
-    border-color: var(--warning-border, #ffcc66);
+    border-color: var(--warning, #ffcc66);
     box-shadow: 0 2px 6px var(--warning-glow, rgba(255, 184, 50, .22)),
         inset 0 1px 1px rgba(255, 255, 255, .1);
 }
@@ -180,7 +180,7 @@ body {
 .badge.info {
     background: linear-gradient(145deg, var(--info-1, #3b6fb9), var(--info-2, #294c7a));
     color: #fff;
-    border-color: var(--info-border, #66a3ff);
+    border-color: var(--info, #66a3ff);
     box-shadow: 0 2px 6px var(--info-glow, rgba(64, 140, 255, .22)),
         inset 0 1px 1px rgba(255, 255, 255, .1);
 }
@@ -271,7 +271,11 @@ button {
     box-shadow:
         inset 0 0 0 1px var(--color-border),
         0 6px 12px rgba(0, 0, 0, .35);
+    white-space: nowrap;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 10px;
 }
+
 
 
 /* Buttons (Abheben, Einzahlen, Überweisen) */
@@ -279,12 +283,11 @@ button.primary {
     background: var(--grad-accent);
     color: var(--color-text-on-accent);
     border: 2px solid var(--color-accent-bright);
+    text-shadow: none;
     box-shadow:
         0 8px 20px var(--color-accent-glow),
         inset 0 2px 0 rgba(255, 255, 255, .3),
         inset 0 -1px 0 rgba(0, 0, 0, .25);
-    width: var(--btn-w);
-    white-space: nowrap;
 }
 
 button.primary:hover {
@@ -328,9 +331,9 @@ button.ghost {
 
 /* Danger */
 button.danger {
-    background: linear-gradient(145deg, var(--danger-1), var(--danger-2));
-    color: #fff;
-    border: 2px solid var(--danger-border);
+    /* background: linear-gradient(145deg, var(--danger-1), var(--danger-2)); */
+    color: var(--danger);
+    border: 3px solid var(--danger);
     box-shadow: 0 8px 20px var(--danger-glow),
         inset 0 2px 0 rgba(255, 255, 255, .15),
         inset 0 -1px 0 rgba(0, 0, 0, .35);
@@ -348,9 +351,8 @@ button.danger:active {
 
 /* Success */
 button.success {
-    background: linear-gradient(145deg, var(--success-1), var(--success-2));
-    color: #fff;
-    border: 2px solid var(--success-border);
+    color: var(--success);
+    border: 3px solid var(--success);
     box-shadow: 0 8px 20px var(--success-glow),
         inset 0 2px 0 rgba(255, 255, 255, .15),
         inset 0 -1px 0 rgba(0, 0, 0, .35);
@@ -368,9 +370,8 @@ button.success:active {
 
 /* Warning */
 button.warning {
-    background: linear-gradient(145deg, var(--warning-1), var(--warning-2));
-    color: #fff;
-    border: 2px solid var(--warning-border);
+    color: var(--warning);
+    border: 3px solid var(--warning);
     box-shadow: 0 8px 20px var(--warning-glow),
         inset 0 2px 0 rgba(255, 255, 255, .15),
         inset 0 -1px 0 rgba(0, 0, 0, .35);
@@ -388,9 +389,8 @@ button.warning:active {
 
 /* Info */
 button.info {
-    background: linear-gradient(145deg, var(--info-1), var(--info-2));
-    color: #fff;
-    border: 2px solid var(--info-border);
+    color: var(--info);
+    border: 3px solid var(--info);
     box-shadow: 0 8px 20px var(--info-glow),
         inset 0 2px 0 rgba(255, 255, 255, .15),
         inset 0 -1px 0 rgba(0, 0, 0, .35);
@@ -443,13 +443,21 @@ button.exit {
     border-radius: var(--radius-md);
     background: var(--grad-primary);
     color: var(--color-text);
-    box-shadow:
-        inset 0 0 0 1px var(--color-border),
-        0 10px 18px rgba(0, 0, 0, .35);
-    line-height: 1;
+    line-height: 0.5;    
     font-size: 20px;
-    display: grid;
-    place-items: center;
+    margin-left: auto;
+    width: 45px;
+    height: 38px;
+
+    border: 2px solid var(--color-accent-bright);
+    box-shadow:
+        0 8px 20px var(--color-accent-glow),
+        inset 0 2px 0 rgba(255, 255, 255, .3),
+        inset 0 -1px 0 rgba(0, 0, 0, .25);
+}
+
+button.exit::before {
+    content: "×";
 }
 
 button.exit:hover {
