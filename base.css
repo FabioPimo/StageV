@@ -457,7 +457,7 @@ button.exit {
 }
 
 button.exit::before {
-    content: "×";
+    content: "✖";
 }
 
 button.exit:hover {
